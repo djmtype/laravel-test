@@ -1,0 +1,109 @@
+// breakpoints
+$bp-xxs: 18rem;
+$bp-xs: 36rem; // 576
+$bp-sm: 48rem; // 768
+$bp-md: 62rem; // 992
+$bp-lg: 75rem; // 1200
+$bp-xl: 90rem; // 1440
+$bp-xxl: 100rem; // 1600
+$breakpoints: (
+    "xs": $bp-xs,
+    // 576
+    "sm": $bp-sm,
+    // 768
+    "md": $bp-md,
+    // 992
+    "lg": $bp-lg,
+    // 1200
+    "xl": $bp-xl,
+    // 1440,
+    "xxl": $bp-xxl // 1600,,
+) !default;
+
+:root {
+	/* colors */
+	--color-white: hsl(0, 0%, 100%);
+	--color-black: hsl(0, 0%, 0%);
+	--color-lite: hsl(0, 0%, 94%);
+
+	--color-primary: hsl(218, 100%, 33%);
+	--color-primary-lite: hsl(212, 68%, 40%);
+
+	--color-secondary: hsl(150, 65%, 36%);
+--color-secondary-lite: hsl(156, 100%, 34%);
+}
+
+:root {
+    --font-system: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+        Ubuntu, Cantarell, Helvetica, Arial, sans-serif;
+    --font-body: Lato, var(--font-system);
+    --font-head: Myriad, var(--font-system);
+
+    --line-height: 1.5;
+    // --line-height: calc(2px + 2ex + 2px);
+    --line-height-sm: 1.25;
+    --ratio: 1.25;
+    --s0: 1rem;
+    --s-1: calc(var(--s0) / var(--ratio));
+    --s-2: calc(var(--s-1) / var(--ratio));
+    --s-3: calc(var(--s-2) / var(--ratio));
+    --s-4: calc(var(--s-3) / var(--ratio));
+    --s-5: calc(var(--s-4) / var(--ratio));
+    --s-6: calc(var(--s-5) / var(--ratio));
+    --s1: calc(var(--s) * var(--ratio));
+    --s2: calc(var(--s1) * var(--ratio));
+    --s3: calc(var(--s2) * var(--ratio));
+    --s4: calc(var(--s3) * var(--ratio));
+    --s5: calc(var(--s4) * var(--ratio));
+    --s6: calc(var(--s5) * var(--ratio));
+}
+
+:root {
+    /* Spacing */
+
+    --f0: 1em;
+    --f-1: calc(var(--f0) / var(--ratio));
+
+    --f1: calc(var(--f) * var(--ratio));
+    --f2: calc(var(--f1) * var(--ratio));
+    --f3: calc(var(--f2) * var(--ratio));
+    --f4: calc(var(--f3) * var(--ratio));
+    --f5: calc(var(--f4) * var(--ratio));
+
+    --flow-0: 0;
+    --flow-xs: var(--f-1);
+    --flow-sm: var(--f0);
+    --flow-md: var(--f1);
+    --flow-lg: var(--f2);
+    --flow-xl: var(--f3);
+    --flow-xxl: var(--f4);
+    --flow-xxxl: var(--f5);
+
+    --gap-0: 0;
+    --gap-xs: calc(var(--s0) / 1.5);
+    --gap-sm: var(--s0);
+    --gap-md: calc(var(--s0) * 1.5);
+    --gap-lg: calc(var(--s0) * 3);
+    --gap-xl: calc(var(--s0) * 4);
+    --gap-xxl: calc(var(--s0) * 5);
+
+		--gutter: var(--gap-md);
+}
+
+:root {
+    /* Misc */
+    --transition-all: 250ms ease all;
+    --transition-fill: 250ms ease fill;
+
+    --border-line: 1px;
+
+    @media (min-width: $bp-xxl) {
+        --border-line: 1px;
+    }
+
+    --radius-rounded: 0.25em;
+    --radius-pill: 999em;
+    --radius-circle: 50%;
+}
+
+

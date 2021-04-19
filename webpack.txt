@@ -1,0 +1,39 @@
+let mix = require('laravel-mix');
+let LiveReloadPlugin = require('webpack-livereload-plugin');
+
+mix.webpackConfig({
+    plugins: [
+        new LiveReloadPlugin({
+            port: '35729',
+        })
+    ],
+});
+
+if (mix.inProduction()) {
+    mix.disableNotifications();
+}
+
+mix
+    .options({
+        postCss: [
+            require('autoprefixer'),
+        ],
+        processCssUrls: false,
+    })
+    .setPublicPath('./static')
+    .sass('./resources/sass/app.scss', 'css')
+    .sourceMaps(true, 'source-map')
+    .version();
+
+
+mix
+    .options({
+        postCss: [
+            require('autoprefixer'),
+        ],
+        processCssUrls: false,
+    })
+    .setPublicPath('./static')
+    .sass('./resources/sass/login.scss', 'css')
+    .sourceMaps(true, 'source-map')
+    .version();

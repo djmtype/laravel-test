@@ -1,0 +1,61 @@
+.container {
+	display: flex;
+	justify-content: center;
+	overflow: hidden;
+	padding-left: var(--gutter);
+	padding-right: var(--gutter);
+}
+	
+	
+	.row {
+    --gap: var(--gutter);
+    display: inline-flex;
+    flex-wrap: wrap;
+    margin: calc(-1 * var(--gap)) 0 0 calc(-1 * var(--gap));
+    width: calc(100% + var(--gap));
+		justify-content: center;
+}
+
+
+
+.row > * {
+    margin: var(--gap) 0 0 var(--gap);
+
+    background: hsl(0, 0%, 30%);
+    color: hsl(0, 0%, 100%);
+    min-height: 3.125rem;
+		flex-basis: 100%;
+		max-width: 100%;
+}
+
+// .col {
+// 	flex-basis: 1;
+// }
+
+$grid__cols: 12;
+$grid__bp--sm: 540;
+
+@for $i from 1 through $grid__cols {
+    $col-width: calc(100 / (#{$grid__cols} / #{$i}) * 1% + (-1 * var(--gap)));
+    .col-#{$i} {
+        flex-basis: $col-width;
+        max-width: $col-width;
+    }
+}
+
+@for $i from 1 through $grid__cols {
+    $col-width: calc(100 / (#{$grid__cols} / #{$i}) * 1% + (-1 * var(--gap)));
+    .xs\:col-#{$i} {
+        flex-basis: $col-width;
+        max-width: $col-width;
+    }
+}
+@media screen and (min-width: $bp-sm) {
+    @for $i from 1 through $grid__cols {
+        $col-width: calc(100 / (#{$grid__cols} / #{$i}) * 1% + (-1 * var(--gap)));
+        .sm\:col-#{$i} {
+            flex-basis: $col-width;
+            max-width: $col-width;
+        }
+    }
+}

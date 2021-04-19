@@ -1,0 +1,76 @@
+$grid-columns: 12 !default;
+
+.container {
+		max-width: $bp-lg;
+		padding-left: var(--gutter);
+		padding-right: var(--gutter);
+		margin-left: auto;
+		margin-right: auto;
+}
+
+.row {
+		--half-gutter: calc(var(--gutter) / 2);
+		gap: var(--gutter);
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+}
+
+[class*="col-"] {
+		width: 100%;
+		flex: 0 0 auto;
+		background-color: yellow;
+		min-height: 50px;
+}
+
+
+
+@for $i from 1 through $grid-columns {
+		$col-basis: (100 / ($grid-columns / $i)) * 1%;
+		$col-width: calc(#{$col-basis} + (-1 * var(--half-gutter)));
+		.col-#{$i} {
+				
+				width: $col-width;
+		}
+}
+
+@for $i from 1 through $grid-columns {
+		$col-basis: (100 / ($grid-columns / $i)) * 1%;
+		$col-width: calc(#{$col-basis} + (-1 * var(--half-gutter)));
+		.xs\:col-#{$i} {
+				
+				width: $col-width;
+		}
+}
+@include bp-min(sm) {
+		@for $i from 1 through $grid-columns {
+				$col-basis: (100 / ($grid-columns / $i)) * 1%;
+				$col-width: calc(#{$col-basis} + (-1 * var(--half-gutter)));
+				.sm\:col-#{$i} {
+						flex-basis: $col-width;
+						max-width: $col-width;
+				}
+		}
+}
+
+@include bp-min(md) {
+		@for $i from 1 through $grid-columns {
+				$col-basis: (100 / ($grid-columns / $i)) * 1%;
+				$col-width: calc(#{$col-basis} + (-1 * var(--half-gutter)));
+				.md\:col-#{$i} {
+						flex-basis: $col-width;
+						max-width: $col-width;
+				}
+		}
+}
+
+@include bp-min(lg) {
+		@for $i from 1 through $grid-columns {
+				$col-basis: (100 / ($grid-columns / $i)) * 1%;
+				$col-width: calc(#{$col-basis} + (-1 * var(--half-gutter)));
+				.lg\:col-#{$i} {
+						flex-basis: $col-width;
+						max-width: $col-width;
+				}
+		}
+}
