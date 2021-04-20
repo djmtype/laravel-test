@@ -1,3 +1,3 @@
 <footer>
-	&copy; 2021
+	&copy; {!! date('Y') !!}
 </footer>

@@ -1,108 +1,90 @@
 html {
-		 font-size: calc(0.1vw + 0.1vh + 1em);
-	}
-	
-	body {
-		font-family: var(--font-body);
-		background: var(--color-lite);
-		color: var(--color-dark);
-		line-height: var(--line-height);
-		
-		position: relative;
-	
-		
-	}
-	
-	// ::selection {
-	// 	color: var(--bg-color);
-	// 	background-color: var(--color-accent);
-	
-	// }
-	
-	// a {
-	// 	transition: var(--transition-all);
-	// }
-	
-	a:not([class*='btn-']) {
-	
-		
-		&:link {
-			color: var(--color-accent);
-			text-decoration: none;
-		}
-	
-		&:visited {
-			color: var(--color-accent);
-		}
-	
-	
-		&:hover, 
-		&:focus {
-			color: var(--body-color);
-		}
-	
-		&:active {
-			color: var(--body-color);
-		}
-	
-		
-		svg {
-			transition: var(--transition-fill);
-		}
-	}
-	
+    font-size: calc(0.1vw + 0.1vh + 1em);
+}
 
-	
+body {
+    font-family: var(--font-body);
+    background: var(--color-lite);
+    color: var(--color-black);
+    line-height: var(--line-height);
 
-	
-	
-	h1,
-	.h1 {
-		font-size: var(--s4);
-		line-height: var(--line-height-sm);
+    position: relative;
+}
 
-	}
-	
-	h2,
-	.h2 {
-		font-size: var(--s3);
-	
-		line-height: var(--line-height-sm);
-	}
-	
-	h3,
-	.h3 {
-		font-size: var(--s2);
-	
-		line-height: inherit;
-	}
-	
-	h4,
-	.h4 {
-		font-size: var(--s1);
-	
-		line-height: inherit;
-	}
-	
-	h5,
-	.h5 {
-		font-size: var(--s);
-	
-		line-height: inherit;
-	}
-	
-	// small,
-	.h6 {
-		font-size: var(--s-1);
-		line-height: inherit;
-	}
-	
-	hr {
-		height: var(--border-line);
-		background: var(--color-subtle-mute);
-		border: 0;
-	}
-	
+// ::selection {
+// 	color: var(--bg-color);
+// 	background-color: var(--color-accent);
 
-	
-	
+// }
+
+// a {
+// 	transition: var(--transition-all);
+// }
+
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+
+    &:visited {
+        color: var(--color-primary);
+    }
+
+    &:hover,
+    &:focus {
+        color: var(--color-secondary);
+    }
+
+    &:active {
+        color: var(--color-secondary);
+    }
+
+    svg {
+        transition: var(--transition-fill);
+    }
+}
+
+h1,
+.h1 {
+    font-size: var(--s4);
+    line-height: var(--line-height-sm);
+}
+
+h2,
+.h2 {
+    font-size: var(--s3);
+
+    line-height: var(--line-height-sm);
+}
+
+h3,
+.h3 {
+    font-size: var(--s2);
+
+    line-height: inherit;
+}
+
+h4,
+.h4 {
+    font-size: var(--s1);
+
+    line-height: inherit;
+}
+
+h5,
+.h5 {
+    font-size: var(--s);
+
+    line-height: inherit;
+}
+
+// small,
+.h6 {
+    font-size: var(--s-1);
+    line-height: inherit;
+}
+
+hr {
+    height: var(--border-line);
+    background: var(--color-subtle-mute);
+    border: 0;
+}

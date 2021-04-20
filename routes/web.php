@@ -25,29 +25,17 @@ Route::get('/about', function () {
 	return view('about');
 });
 
-Route::get('/posts', function () {
 
-	
-	// $posts = array_map(function ($file) {
-	// 	$document = YamlFrontMatter::parseFile($file);
-	// 		return new Post(
-	// 			$document->title,
-	// 			$document->excerpt,
-	// 			$document->date,
-	// 			$document->body(),
-	// 			$document->slug,
-	// 		);
-	// }, $files);
- 
+// Route for Posts landing page
+Route::get('/posts', function () {
 		return view('posts', [
 		 'posts' => Post::all()
-
 	]);
 
 });
 
+// Route for single Post page
 Route::get('posts/{post}', function ($slug) {
-
 	return view('post', [
 		'post' => Post::findOrFail($slug)
 	]);

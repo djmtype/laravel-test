@@ -17,14 +17,17 @@ dl,
 dd {
 	margin: 0;
 }
-ul[role="list"],
-ol[role="list"] {
+ul[role="list"], ul[class], 
+ol[role="list"], ol[class] {
 	list-style: none;
 }
 
 ul:not([class]),
 ol:not([class]) {
 	padding-inline-start: 2em;
+}
+ul[class], ol[class] {
+	padding-inline-start: 0;
 }
 html:focus-within {
 	scroll-behavior: smooth;

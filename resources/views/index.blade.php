@@ -1,7 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-	This is new Home.
 
-	<div><img src="{{ asset('img/markus-spiske-hvSr_CVecVI-unsplash.jpg') }}" alt=""></div>
+<div class="container">
+	<div class="row">
+		<div class="col">
+			test
+		</div><!-- /.col -->
+	</div><!-- /.row -->
+</div><!-- /.container -->
+
 @endsection

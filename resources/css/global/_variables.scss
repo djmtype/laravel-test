@@ -37,7 +37,7 @@ $breakpoints: (
     --font-system: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
         Ubuntu, Cantarell, Helvetica, Arial, sans-serif;
     --font-body: Lato, var(--font-system);
-    --font-head: Myriad, var(--font-system);
+    --font-heading: Myriad, var(--font-system);
 
     --line-height: 1.5;
     // --line-height: calc(2px + 2ex + 2px);
@@ -50,7 +50,7 @@ $breakpoints: (
     --s-4: calc(var(--s-3) / var(--ratio));
     --s-5: calc(var(--s-4) / var(--ratio));
     --s-6: calc(var(--s-5) / var(--ratio));
-    --s1: calc(var(--s) * var(--ratio));
+    --s1: calc(var(--s0) * var(--ratio));
     --s2: calc(var(--s1) * var(--ratio));
     --s3: calc(var(--s2) * var(--ratio));
     --s4: calc(var(--s3) * var(--ratio));
@@ -64,7 +64,7 @@ $breakpoints: (
     --f0: 1em;
     --f-1: calc(var(--f0) / var(--ratio));
 
-    --f1: calc(var(--f) * var(--ratio));
+    --f1: calc(var(--f0) * var(--ratio));
     --f2: calc(var(--f1) * var(--ratio));
     --f3: calc(var(--f2) * var(--ratio));
     --f4: calc(var(--f3) * var(--ratio));
@@ -95,11 +95,9 @@ $breakpoints: (
     --transition-all: 250ms ease all;
     --transition-fill: 250ms ease fill;
 
-    --border-line: 1px;
+    --border-line: Max(1px, .1em);
 
-    @media (min-width: $bp-xxl) {
-        --border-line: 1px;
-    }
+
 
     --radius-rounded: 0.25em;
     --radius-pill: 999em;

@@ -1,0 +1,50 @@
+.txt-center {
+	text-align: center;
+}
+.txt-right {
+	text-align: right;
+}
+
+.txt-uppercase {
+	text-transform: uppercase;
+	letter-spacing: .1em;
+	font-weight: normal;
+}
+
+.txt-font-body {
+	font-family: var(--font-body);
+}
+
+.txt-font-heading {
+	font-family: var(--font-heading);
+}
+
+// text color
+
+.txt-white {
+	color: var(--color-white);
+}
+
+.txt-black {
+	color: var(--color-black);
+}
+
+.txt-lite {
+	color: var(--color-lite);
+}
+
+.txt-primary {
+	color: var(--color-primary);
+}
+
+.txt-primary-dark {
+	color: var(--color-primary-dark);
+}
+
+.txt-secondary {
+	color: var(--color-secondary);
+}
+
+.txt-secondary-dark {
+	color: var(--color-secondary-dark);
+}
