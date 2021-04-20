@@ -1,10 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\File;
+
 use App\Http\Controllers\MenuController;
-use App\Models\Post;
-use Spatie\YamlFrontMatter\YamlFrontMatter;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,46 +16,43 @@ use Spatie\YamlFrontMatter\YamlFrontMatter;
 */
 
 Route::get('/', function () {
-		return view('index');
-	});
-
-Route::get('/about', function () {
-	return view('about');
+	return view('index');
 });
 
 Route::get('/posts', function () {
-
-	
-	// $posts = array_map(function ($file) {
-	// 	$document = YamlFrontMatter::parseFile($file);
-	// 		return new Post(
-	// 			$document->title,
-	// 			$document->excerpt,
-	// 			$document->date,
-	// 			$document->body(),
-	// 			$document->slug,
-	// 		);
-	// }, $files);
- 
-		return view('posts', [
-		 'posts' => Post::all()
-
-	]);
-
+	return view('posts');
 });
 
 Route::get('posts/{post}', function ($slug) {
 
-	return view('post', [
-		'post' => Post::findOrFail($slug)
-	]);
+	if (!file_exists($path = __DIR__ . "/../resources/posts/{$slug}.html")) {
+		return redirect('/posts');
+	}
 
-});
+
+	// php 7.3
+	$post = cache()->remember("posts.{$slug}", now()->addDay(), function () use ($path) {
+		// var_dump('field_get_contents');
+		return file_get_contents($path);
+	});
+
+	// php 7.4
+	// $post = cache()->remember("posts.{$slug}", 5, fn() => file_get_contents($path));
+
+
+	return view('post', ['post' => $post]);
+})->where('post', '[A-z_\-]+');
+
+
+
+
+
+
 
 
 // Route::get('/', [MenuController::class, 'index']);
 
-// Route::get('/about', [MenuController::class, 'about']);
+Route::get('/about', [MenuController::class, 'about']);
 
 
 

@@ -8,9 +8,13 @@
 <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
 <body>
+	
 	<header>
-		@include('layouts.header')
+		@yield('banner')
 	</header>
+	
+	@include('layouts.nav')
+
 	@yield('content')
 
 	<footer>
