@@ -33,7 +33,12 @@
 		@include('partials.header')
 	</header>
 
-	{{ $slot }}
+
+
+	{{-- {{ $slot }} --}}
+	@yield('content')
+
+	{{ $title }}
 
 
 	@include('partials.footer')

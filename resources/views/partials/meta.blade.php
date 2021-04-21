@@ -9,7 +9,11 @@
 
 <meta property="og:title" content="{{ $title }}" />
 
-<meta property="og:url" content="{{ getenv('APP_URL') }}" />
+<meta property="og:url" content="{{ getenv('REMOTE_URL') }}/{{ $page ?? '' }}" />
+
+{{-- <meta property="og:url" content="{{ getenv('APP_URL') }}" /> --}}
+{{-- {{ route('page.uses') }} --}}
+{{-- <meta property="og:url" content="{{ $pathName }}" /> --}}
 <meta property="og:type" content="website" />
 {{-- <meta property="og:type" content="article"/> --}}
 

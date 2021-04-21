@@ -1,8 +1,9 @@
-@extends('layouts.app')
+<x-main-layout title="About" page="about">
 
 @section('content')
 <div class="container">
 	<div class="row">
+	
 
 		<div class="xs:col-12 sm:col-6">
 <ul>
@@ -18,6 +19,8 @@
 
 	</div>
 </div><!-- /.container -->
-
+<h1>{{ $path ?? '' }}</h1>
 
 @endsection
+
+</x-main-layout>
