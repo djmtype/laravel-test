@@ -1,4 +1,5 @@
-@extends('layouts.app')
+{{-- @extends('layouts.app') --}}
+<x-main-layout title="Home" page="home">
 
 @section('content')
 
@@ -11,3 +12,5 @@
 </div><!-- /.container -->
 
 @endsection
+
+</x-main-layout>

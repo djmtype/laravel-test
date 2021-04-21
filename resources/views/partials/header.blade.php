@@ -6,6 +6,6 @@
 				<span class="sr-only">Salonpas&reg; It&rsquo;s Good Medicine</span>
 			</a>
 		</div><!-- /.site-logo -->
-		@include('layouts.nav')
+		@include('partials.nav')
 	</div><!-- /.container -->
 </header><!-- /.site-header -->

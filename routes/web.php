@@ -18,17 +18,17 @@ use Spatie\YamlFrontMatter\YamlFrontMatter;
 */
 
 Route::get('/', function () {
-		return view('index');
+		return view('pages.index');
 	});
 
 Route::get('/about', function () {
-	return view('about');
+	return view('pages.about');
 });
 
 
 // Route for Posts landing page
 Route::get('/posts', function () {
-		return view('posts', [
+		return view('pages.posts', [
 		 'posts' => Post::all()
 	]);
 
@@ -36,7 +36,7 @@ Route::get('/posts', function () {
 
 // Route for single Post page
 Route::get('posts/{post}', function ($slug) {
-	return view('post', [
+	return view('pages.post', [
 		'post' => Post::findOrFail($slug)
 	]);
 
