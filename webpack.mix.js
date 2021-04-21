@@ -61,7 +61,7 @@ mix
 
 .sourceMaps(true, 'source-map')
 
-
+.copyDirectory('resources/fonts', 'public/fonts');
   
 
    

@@ -9,11 +9,27 @@
 
 <meta property="og:title" content="{{ $title }}" />
 
-<meta property="og:url" content="{{ getenv('REMOTE_URL') }}/{{ $page ?? '' }}" />
+
+
+
+
+
+@if ( Request::is('/') || empty($page) )
+@php 
+$pathName = getenv('APP_URL')
+@endphp
+@else
+@php $pathName = getenv('APP_URL') . '/' . $page @endphp
+@endif
+
+<meta property="og:url" content="{{ $pathName  }}" />
+
+
 
 {{-- <meta property="og:url" content="{{ getenv('APP_URL') }}" /> --}}
-{{-- {{ route('page.uses') }} --}}
-{{-- <meta property="og:url" content="{{ $pathName }}" /> --}}
+
+
+
 <meta property="og:type" content="website" />
 {{-- <meta property="og:type" content="article"/> --}}
 

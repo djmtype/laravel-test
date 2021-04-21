@@ -2,7 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\File;
-use App\Http\Controllers\MenuController;
+// use App\Http\Controllers\MenuController;
+use App\Http\Controllers\PagesController;
 use App\Models\Post;
 use Spatie\YamlFrontMatter\YamlFrontMatter;
 
@@ -19,11 +20,13 @@ use Spatie\YamlFrontMatter\YamlFrontMatter;
 
 
 
-Route::get('/', function () {
-		return view('pages.index');
-	});
+// Route::get('/', function () {
+// 		return view('pages.index');
+// 	});
 
+// Route::get('/', [MenuController::class, 'index']);
 
+Route::get('/', [PagesController::class, 'index']); 
 
 Route::get('/about', function () {
 	return view('pages.about');

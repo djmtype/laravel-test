@@ -1,4 +1,14 @@
 {
     "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css"
+    "/css/app.css": "/css/app.css",
+    "/fonts/Helserif-Boo.woff2": "/fonts/Helserif-Boo.woff2",
+    "/fonts/Helserif-Med.woff2": "/fonts/Helserif-Med.woff2",
+    "/fonts/LatoLatin-Bold.woff2": "/fonts/LatoLatin-Bold.woff2",
+    "/fonts/LatoLatin-BoldItalic.woff2": "/fonts/LatoLatin-BoldItalic.woff2",
+    "/fonts/LatoLatin-Italic.woff2": "/fonts/LatoLatin-Italic.woff2",
+    "/fonts/LatoLatin-Regular.woff2": "/fonts/LatoLatin-Regular.woff2",
+    "/fonts/MyriadPro-Bold.woff2": "/fonts/MyriadPro-Bold.woff2",
+    "/fonts/MyriadPro-BoldIt.woff2": "/fonts/MyriadPro-BoldIt.woff2",
+    "/fonts/MyriadPro-It.woff2": "/fonts/MyriadPro-It.woff2",
+    "/fonts/MyriadPro-Regular.woff2": "/fonts/MyriadPro-Regular.woff2"
 }
