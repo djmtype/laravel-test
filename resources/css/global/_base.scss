@@ -88,3 +88,9 @@ hr {
     background: var(--color-subtle-mute);
     border: 0;
 }
+
+// Salonpas registration requires sub position
+sup {
+    vertical-align: sub;
+    font-weight: normal;
+}

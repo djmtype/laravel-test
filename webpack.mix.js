@@ -1,8 +1,14 @@
-const mix = require("laravel-mix")
+const mix = require("laravel-mix");
 
-require("laravel-mix-serve")
+const ImageminPlugin = require("imagemin-webpack-plugin").default;
+const CopyWebpackPlugin = require("copy-webpack-plugin");
+const imageminMozjpeg = require("imagemin-mozjpeg");
 
-require("laravel-mix-blade-reload")
+// const ResponsiveImagesLoader = require('responsive-loader')
+
+require("laravel-mix-serve");
+
+require("laravel-mix-blade-reload");
 
 /*
  |--------------------------------------------------------------------------
@@ -25,65 +31,66 @@ require("laravel-mix-blade-reload")
 //     // hook: 'beforeCompile'
 // });
 
-
-
 mix
-.browserSync({
-    proxy: 'http://localhost:8000/'
- })
-// .options({
-//     postCss: [
-//         require('autoprefixer'),
-//     ],
-//     processCssUrls: true,
-// })
+    .browserSync({
+        proxy: "http://localhost:8000/",
+    })
+    // .options({
+    //     postCss: [
+    //         require('autoprefixer'),
+    //     ],
+    //     processCssUrls: true,
+    // })
 
-// .postCss('resources/css/app.css', 'public/css')
+    // .postCss('resources/css/app.css', 'public/css')
 
+    // .options({
+    //     postCss: [
+    //         require('postcss-custom-properties')
+    //     ]
+    // })
 
-// .options({
-//     postCss: [
-//         require('postcss-custom-properties')
-//     ]
-// })
+    .sass("resources/css/app.scss", "public/css", {
+        // includePaths: ['node_modules']
+        //  sassOptions: {
+        //   includePaths: ['node_modules']
+        // }
+    })
 
-.sass('resources/css/app.scss', 'public/css')
+    // import KeenSlider from 'keen-slider'
 
-// .options({
-//     sourceMap: true,
-//     autoprefixer: true,
-//     processCssUrls: true
-// })
+    // const slider = new KeenSlider('#my-keen-slider')
 
-.js("resources/js/app.js", "public/js")
+    // .options({
+    //     sourceMap: true,
+    //     autoprefixer: true,
+    //     processCssUrls: true
+    // })
 
-// .options({ processCssUrls: true })
+    .js("resources/js/app.js", "public/js")
 
-.sourceMaps(true, 'source-map')
+    // .js('node_modules/keen-slider/keen-slider.js', 'public/js/keen-slider.js')
 
-.copyDirectory('resources/fonts', 'public/fonts');
-  
+    // .options({ processCssUrls: true })
 
-   
+    .sourceMaps(true, "source-map");
 
-    // .serve({
-    //         cmd: 'php',
-    //         args: ['artisan', 'serve'],
-    //         verbose: true,
-    //         watch: true,
-    //         dev: true,
-    //         prod: false,
-    //         // hook: 'beforeCompile'
-    //     })
+// .setResourceRoot('/public')
 
-       
+// .serve({
+//         cmd: 'php',
+//         args: ['artisan', 'serve'],
+//         verbose: true,
+//         watch: true,
+//         dev: true,
+//         prod: false,
+//         // hook: 'beforeCompile'
+//     })
 
-       
-
-    // .bladeReload({
-    //     //     path: 'resources/views/**/*.blade.php',
-    //        debug: true,
-    //      });
+// .bladeReload({
+//     //     path: 'resources/views/**/*.blade.php',
+//        debug: true,
+//      });
 // .bladeReload({
 //     path: 'resources/views/**/*.blade.php',
 //     debug: true,
@@ -100,9 +107,51 @@ mix
 //     prod: false
 // });
 
-
 if (mix.inProduction()) {
-    mix
-    .sourceMaps(false)
-    .disableNotifications();
+    mix.sourceMaps(false)
+        .copyDirectory("resources/fonts", "public/fonts")
+        .copy(
+            "node_modules/flickity/dist/flickity.pkgd.js",
+            "public/js/flickity.js"
+        )
+
+        .copy(
+            "node_modules/flickity-fade/flickity-fade.js",
+            "public/js/flickity-fade.js"
+        )
+        .webpackConfig({
+          plugins: [
+              new CopyWebpackPlugin({
+                  patterns: [
+                      {
+                          from: "resources/images", // -> the source location (relative to where your webpack.mix.js is located)
+                          to: "img", // Laravel mix will place this in 'public/assets/images'
+                      },
+                  ],
+              }),
+      
+              // new ResponsiveImagesLoader ({
+      
+              //   rules: [
+              //     {
+              //       test: /\.(jpe?g|png)$/i,
+              //       loader: 'responsive-loader',
+              //       options: {
+              //         sizes: [600, 1200, 1600],
+              //         // adapter: require('responsive-loader/sharp')
+              //       }
+              //     }
+              //   ]
+              // }),
+              new ImageminPlugin({
+                  test: /\.(jpe?g|png|gif|svg)$/i,
+                  plugins: [
+                      imageminMozjpeg({
+                          quality: 80,
+                      }),
+                  ],
+              }),
+          ],
+      })
+        .disableNotifications();
 }
