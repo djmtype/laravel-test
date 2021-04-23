@@ -29,6 +29,8 @@ $breakpoints: (
 	--color-primary: hsl(218, 100%, 33%);
 	--color-primary-lite: hsl(212, 68%, 40%);
 
+    --color-primary-xlite: hsl(218, 35%, 82%);
+
 	--color-secondary: hsl(150, 65%, 36%);
 --color-secondary-lite: hsl(156, 100%, 34%);
 }
@@ -98,6 +100,8 @@ $breakpoints: (
     --transition-fill: 250ms ease fill;
 
     --border-line: Max(1px, .1em);
+
+    --border-line-thick: Max(2px, .15em);
 
 
 

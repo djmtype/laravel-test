@@ -21,11 +21,33 @@ class PagesController extends Controller {
 //     $this->layout->content = View::make('pages/index', array('title' => 'Home page'));
 // }
 
+
+
+
+
   public function index(){
     $data = array();
-    $data['title'] = "Welcome";
+    $data['title'] = "Welcome to Salonpas";
     $data['page'] = "home";
     $data['description'] = "Some kind of description";
     return view('pages.index')->with($data);
   }
+
+  public function clinicalTrialsStudies(){
+    $data = array();
+    $data['title'] = "Clinical Trials & Studies";
+    $data['page'] = "clinical-trials-studies";
+    $data['description'] = "Some kind of description";
+    return view('pages.clinical-trials-studies')->with($data);
+  }
+
+  public function clinicalStudiesOfSalonpasProducts(){
+    $data = array();
+    $data['title'] = "Clinical Studies of Salonpas Products";
+    $data['page'] = "clinical-studies-of-salonpas-products";
+    $data['description'] = "Some kind of description";
+    return view('pages.clinical-studies-of-salonpas-products')->with($data);
+  }
+
+
 }

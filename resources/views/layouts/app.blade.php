@@ -6,7 +6,7 @@
 	@if($page == 'home')
 	<title>Salonpas</title>
 	@else
-	<title>{{ uc($title) }} | Salonpas&reg;</title>
+	<title>{!! $title !!} | Salonpas&reg;</title>
 	@endif
 
 	@include('partials.meta')

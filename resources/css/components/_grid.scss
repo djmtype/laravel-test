@@ -13,14 +13,16 @@ $grid-columns: 12 !default;
 		gap: var(--gutter);
 		display: flex;
 		flex-wrap: wrap;
-		justify-content: center;
+		// justify-content: center;
+}
+
+.justify-center {
+	justify-content: center;
 }
 
 [class*="col-"] {
 		width: 100%;
 		flex: 0 0 auto;
-		background-color: yellow;
-		min-height: 50px;
 }
 
 

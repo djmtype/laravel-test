@@ -6,9 +6,16 @@
 
 @import 'mixins/breakpoints'; 
 
+@import 'mixins/rem'; 
+
 @import 'global/base'; 
 
 @import 'components/grid'; 
+
+@import 'components/footnotes'; 
+
+@import 'components/buttons'; 
+@import 'components/cards'; 
 
 @import 'components/carousel'; 
 

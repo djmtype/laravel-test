@@ -28,9 +28,16 @@ use Spatie\YamlFrontMatter\YamlFrontMatter;
 
 Route::get('/', [PagesController::class, 'index']); 
 
-Route::get('/about', function () {
-	return view('pages.about');
-});
+Route::get('/clinical-trials-studies', [PagesController::class, 'clinicalTrialsStudies']); 
+
+Route::get('/clinical-trials-studies/clinical-studies-of-salonpas-products', [PagesController::class, 'clinicalStudiesOfSalonpasProducts']); 
+
+
+
+
+// Route::get('/about', function () {
+// 	return view('pages.about');
+// });
 
 
 // Route for Posts landing page

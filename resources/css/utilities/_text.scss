@@ -7,44 +7,43 @@
 
 .txt-uppercase {
 	text-transform: uppercase;
-	letter-spacing: .1em;
-	font-weight: normal;
+	letter-spacing: .05em;
 }
 
-.txt-font-body {
+.txt-body {
 	font-family: var(--font-body);
 }
 
-.txt-font-heading {
+.txt-heading {
 	font-family: var(--font-heading);
 }
 
 // text color
 
-.txt-color-white {
+.txt-white {
 	color: var(--color-white);
 }
 
-.txt-color-black {
+.txt-black {
 	color: var(--color-black);
 }
 
-.txt-color-lite {
+.txt-lite {
 	color: var(--color-lite);
 }
 
-.txt-color-primary {
+.txt-primary {
 	color: var(--color-primary);
 }
 
-.txt-color-primary-dark {
+.txt-primary-dark {
 	color: var(--color-primary-dark);
 }
 
-.txt-color-secondary {
+.txt-secondary {
 	color: var(--color-secondary);
 }
 
-.txt-color-secondary-dark {
+.txt-secondary-dark {
 	color: var(--color-secondary-dark);
 }

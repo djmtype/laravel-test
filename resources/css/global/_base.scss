@@ -60,7 +60,7 @@ h3,
 .h3 {
     font-size: var(--s2);
 
-    line-height: inherit;
+    line-height: var(--line-height-sm);
 }
 
 h4,
@@ -90,7 +90,20 @@ hr {
 }
 
 // Salonpas registration requires sub position
-sup {
-    vertical-align: sub;
+sub, sup {
+   // vertical-align: sub;
     font-weight: normal;
+    line-height: 1;
 }
+
+p sup, nav sup {
+    font-size: 75%;
+}
+
+p sub, nav sub {
+    font-size: 50%;
+	position: relative;
+	bottom: .5em;
+}
+
+
